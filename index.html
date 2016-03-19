@@ -1,0 +1,1536 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zokavn home page</title>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+    <link rel="alternate" type="application/rss+xml" title="Orane &raquo; Feed" href="feed/index.html" />
+    <link rel="alternate" type="application/rss+xml" title="Orane &raquo; Comments Feed" href="comments/feed/index.html" />
+    <script type="text/javascript">
+        window._wpemojiSettings = { "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/72x72\/", "ext": ".png", "source": { "concatemoji": "http:\/\/telecomsians.com\/themes\/orane_demo\/wp-includes\/js\/wp-emoji-release.min.js?ver=e75a8f82c6fd785a4c26890c50e42c65" } };
+        !function (a, b, c) { function d(a) { var c, d = b.createElement("canvas"), e = d.getContext && d.getContext("2d"), f = String.fromCharCode; return e && e.fillText ? (e.textBaseline = "top", e.font = "600 32px Arial", "flag" === a ? (e.fillText(f(55356, 56806, 55356, 56826), 0, 0), d.toDataURL().length > 3e3) : "diversity" === a ? (e.fillText(f(55356, 57221), 0, 0), c = e.getImageData(16, 16, 1, 1).data.toString(), e.fillText(f(55356, 57221, 55356, 57343), 0, 0), c !== e.getImageData(16, 16, 1, 1).data.toString()) : ("simple" === a ? e.fillText(f(55357, 56835), 0, 0) : e.fillText(f(55356, 57135), 0, 0), 0 !== e.getImageData(16, 16, 1, 1).data[0])) : !1 } function e(a) { var c = b.createElement("script"); c.src = a, c.type = "text/javascript", b.getElementsByTagName("head")[0].appendChild(c) } var f, g; c.supports = { simple: d("simple"), flag: d("flag"), unicode8: d("unicode8"), diversity: d("diversity") }, c.DOMReady = !1, c.readyCallback = function () { c.DOMReady = !0 }, c.supports.simple && c.supports.flag && c.supports.unicode8 && c.supports.diversity || (g = function () { c.readyCallback() }, b.addEventListener ? (b.addEventListener("DOMContentLoaded", g, !1), a.addEventListener("load", g, !1)) : (a.attachEvent("onload", g), b.attachEvent("onreadystatechange", function () { "complete" === b.readyState && c.readyCallback() })), f = c.source || {}, f.concatemoji ? e(f.concatemoji) : f.wpemoji && f.twemoji && (e(f.twemoji), e(f.wpemoji))) }(window, document, window._wpemojiSettings);
+    </script>
+    <style type="text/css">
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 .07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+
+    <link rel='stylesheet' id='orane-main-css-css' href='assets/css/app.css' type='text/css' media='all' />
+
+  
+    <script type='text/javascript' src='wp-includes/js/jquery/jquery9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-includes/js/jquery/jquery-migrate.min9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-content/plugins/revslider/rs-plugin/js/jquery.themepunch.tools.min9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-content/plugins/revslider/rs-plugin/js/jquery.themepunch.revolution.min9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <link rel='https://api.w.org/' href='wp-json/index.html' />
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd" />
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" />
+    <link rel="canonical" href="index.html" />
+    <link rel='shortlink' href='index.html' />
+
+    <script type="text/javascript">
+			jQuery(document).ready(function() {
+				// CUSTOM AJAX CONTENT LOADING FUNCTION
+				var ajaxRevslider = function(obj) {
+
+					// obj.type : Post Type
+					// obj.id : ID of Content to Load
+					// obj.aspectratio : The Aspect Ratio of the Container / Media
+					// obj.selector : The Container Selector where the Content of Ajax will be injected. It is done via the Essential Grid on Return of Content
+
+					var content = "";
+
+					data = {};
+
+					data.action = 'revslider_ajax_call_front';
+					data.client_action = 'get_slider_html';
+					data.token = '8b6b309fdc';
+					data.type = obj.type;
+					data.id = obj.id;
+					data.aspectratio = obj.aspectratio;
+
+					// SYNC AJAX REQUEST
+					jQuery.ajax({
+						type:"post",
+						url:"http://telecomsians.com/themes/orane_demo/wp-admin/admin-ajax.php",
+						dataType: 'json',
+						data:data,
+						async:false,
+						success: function(ret, textStatus, XMLHttpRequest) {
+							if(ret.success == true)
+								content = ret.data;
+						},
+						error: function(e) {
+							console.log(e);
+						}
+					});
+
+					 // FIRST RETURN THE CONTENT WHEN IT IS LOADED !!
+					 return content;
+				};
+
+				// CUSTOM AJAX FUNCTION TO REMOVE THE SLIDER
+				var ajaxRemoveRevslider = function(obj) {
+					return jQuery(obj.selector+" .rev_slider").revkill();
+				};
+
+				// EXTEND THE AJAX CONTENT LOADING TYPES WITH TYPE AND FUNCTION
+				var extendessential = setInterval(function() {
+					if (jQuery.fn.tpessential != undefined) {
+						clearInterval(extendessential);
+						if(typeof(jQuery.fn.tpessential.defaults) !== 'undefined') {
+							jQuery.fn.tpessential.defaults.ajaxTypes.push({type:"revslider",func:ajaxRevslider,killfunc:ajaxRemoveRevslider,openAnimationSpeed:0.3});
+							// type:  Name of the Post to load via Ajax into the Essential Grid Ajax Container
+							// func: the Function Name which is Called once the Item with the Post Type has been clicked
+							// killfunc: function to kill in case the Ajax Window going to be removed (before Remove function !
+							// openAnimationSpeed: how quick the Ajax Content window should be animated (default is 0.3)
+						}
+					}
+				},30);
+			});
+    </script>
+    <style type="text/css">
+        .recentcomments a {
+            display: inline !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+    </style>
+    <meta name="generator" content="Powered by Visual Composer - drag and drop page builder for WordPress." />
+    <!--[if IE 8]><link rel="stylesheet" type="text/css" href="http://telecomsians.com/themes/orane_demo/wp-content/plugins/js_composer/assets/css/vc-ie8.css" media="screen"><![endif]-->
+    <script type="text/javascript">
+        (function (url) {
+            if (/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)) { return; }
+            var addEvent = function (evt, handler) {
+                if (window.addEventListener) {
+                    document.addEventListener(evt, handler, false);
+                } else if (window.attachEvent) {
+                    document.attachEvent('on' + evt, handler);
+                }
+            };
+            var removeEvent = function (evt, handler) {
+                if (window.removeEventListener) {
+                    document.removeEventListener(evt, handler, false);
+                } else if (window.detachEvent) {
+                    document.detachEvent('on' + evt, handler);
+                }
+            };
+            var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+            var logHuman = function () {
+                var wfscr = document.createElement('script');
+                wfscr.type = 'text/javascript';
+                wfscr.async = true;
+                wfscr.src = url + '&r=' + Math.random();
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(wfscr);
+                for (var i = 0; i < evts.length; i++) {
+                    removeEvent(evts[i], logHuman);
+                }
+            };
+            for (var i = 0; i < evts.length; i++) {
+                addEvent(evts[i], logHuman);
+            }
+        })('indexdc65.html?wordfence_logHuman=1&amp;hid=DF8C28868129EF106FA2A945FF29B9D8');
+    </script>
+</head>
+
+<body class="home page page-id-438 page-template page-template-home-page page-template-home-page-php pattern-1 wpb-js-composer js-comp-ver-4.3.5 vc_responsive">
+
+    <!-- style switcher / Only for demo -->
+    <!--<div id="optwrap">
+        <div id="options-1">
+            <div class="section-1">
+                <strong>Choose Layout</strong> <br />
+                <ul class="layout-style">
+                    <li><a class="layout-wide" href="#">Wide</a></li>
+                    <li><a class="layout-boxed" href="#">Boxed</a></li>
+                </ul>
+                <br><br><br>
+
+                <strong>Choose background</strong> <br />
+                <ul class="boxed-bg">
+                    <li><a class="pattern-1" href="pattern-1.html"></a></li>
+                    <li><a class="pattern-2" href="pattern-2.html"></a></li>
+                    <li><a class="pattern-3" href="pattern-3.html"></a></li>
+                    <li><a class="pattern-4" href="pattern-4.html"></a></li>
+                    <li><a class="pattern-5" href="pattern-5.html"></a></li>
+                    <li><a class="pattern-6" href="pattern-6.html"></a></li>
+                    <li><a class="pattern-7" href="pattern-7.html"></a></li>
+                    <li><a class="pattern-8" href="pattern-8.html"></a></li>
+                    <li><a class="pattern-9" href="pattern-9.html"></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="options">
+            <div class="section cf">
+                <strong>Choose Color</strong> <br />
+
+                <ul class="color-styles">
+                    <li><a class="preview-color-1" href="darkorange.html"></a></li>
+                    <li><a class="preview-color-2" href="darkblue.html"></a></li>
+                    <li><a class="preview-color-3" href="red.html"></a></li>
+                    <li><a class="preview-color-4" href="orange.html"></a></li>
+                    <li><a class="preview-color-6" href="darkcyan.html"></a></li>
+                    <li><a class="preview-color-7" href="lightcyan.html"></a></li>
+                    <li><a class="preview-color-8" href="pink.html"></a></li>
+                    <li><a class="preview-color-9" href="tangerine.html"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="closer">
+            <a class="opener" href="#"><i class="fa fa-cog fa-spin"></i></a>
+            <a class="closerer" href="#"><i class="fa fa-cog fa-spin"></i></a>
+        </div>
+    </div>-->
+
+    <div class="full-wrap ">
+        <header>
+            <div class="top-bar">
+                <div class="container">
+                    <div class='col-md-6 top-info'>
+                        <i class="fa fa-envelope"></i>
+                        <span class="top-bar-text">admin@Zokavn.com</span>
+                        <i class="fa fa-mobile fa-lg"></i>
+                        <span class="top-bar-text">+98 6545678765</span>
+                        <i class="fa fa-skype fa-lg"></i>
+                        <span class="top-bar-text">Zokavn</span>
+                    </div>
+                    <div class='col-md-6'>
+                        <ul class='top-socials'>
+                            <li><a href='http://facebook.com/getredhawkstudio1' target="_blank"><i class='fa fa-facebook'></i></a></li>
+                            <li><a href='http://twitter.com/getredhawkstudio1' target="_blank"><i class='fa fa-twitter'></i></a></li>
+                            <li><a href='http://plus.google.com/getredhawkstudio1' target="_blank"><i class='fa fa-google-plus'></i></a></li>
+                            <li><a href='http://youtube.com/getredhawkstudio1' target="_blank"><i class='fa fa-youtube'></i></a></li>
+                            <li><a href='http://linkedin.com/getredhawkstudio1' target="_blank"><i class='fa fa-linkedin'></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+        <div class="nav_wrapper">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="container container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="http://telecomsians.com/themes/orane_demo">
+                            <img src='assets/images/logo.jpg' width="60" height="60" alt="LOGO">
+                            Zokavn
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <div class="menu-menu-1-container">
+                            <ul id="menu-menu-1" class="nav navbar-nav navbar-right">
+                                <li id="menu-item-1021" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1021"><a href="javascript:;">Home</a></li>
+
+                                <li id="menu-item-1007" class="menu-item menu-item-type-post_type menu-item-object-page dropdown menu-item-1032">
+                                    <a href="index.html">Web Applications</a>
+                                    <ul class="dropdown-menu">
+                                        <li id="menu-item-1006" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-438 current_page_item menu-item-1006">
+                                            <a href="index.html">HTML/CSS3, Bootstrap Framework</a>
+                                        </li>
+                                        <li id="menu-item-1130" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1130">
+                                            <a href="restaurant/index.html">ASP.NET MVC Framework</a>
+                                        </li>
+                                        <li id="menu-item-1011" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1011">
+                                            <a href="home-version-2/index.html">JAVA Spring MVC Framework</a>
+                                        </li>
+                                        <li id="menu-item-1012" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1012">
+                                            <a href="home-version-3/index.html">Node js Framework</a>
+                                        </li>
+                                        <li id="menu-item-1029" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1029">
+                                            <a href="home-page-version-4/index.html">Ruby On Rails MVC Framework</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li id="menu-item-1007" class="menu-item menu-item-type-post_type menu-item-object-page dropdown menu-item-1032">
+                                    <a href="index.html">Mobile Applications</a>
+                                    <ul class="dropdown-menu">
+                                        <li id="menu-item-1130" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1130">
+                                            <a href="restaurant/index.html">Android Applications</a>
+                                        </li>
+                                        <li id="menu-item-1011" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1011">
+                                            <a href="home-version-2/index.html">IOS Applications</a>
+                                        </li>
+                                        <li id="menu-item-1041" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1041">
+                                            <a href="home-page-version-6/index.html">Windown Phone Applications</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li id="menu-item-1021" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1021"><a href="blog/index.html">Domain & Hosting</a></li>
+                                <li id="menu-item-1021" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1021"><a href="blog/index.html">About US</a></li>
+                                <li id="menu-item-1026" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1026"><a href="shop/index.html">Contact</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="sr">
+                            <form action="http://telecomsians.com/themes/orane_demo">
+                                <input id="search" name="s" type="text" placeholder="What're you looking for ?">
+                                <input id="search_submit" value="Search" type="submit">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="orane-home post-438 page type-page status-publish hentry">
+            <div class="vc_row wpb_row vc_row-fluid">
+                <div class="vc_col-sm-12 wpb_column vc_column_container">
+                    <div class="wpb_wrapper">
+                        <div class="wpb_revslider_element wpb_content_element">
+                            <div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" style="margin:0px auto;background-color:#E9E9E9;padding:0px;margin-top:0px;margin-bottom:0px;max-height:545px;">
+                                <!-- START REVOLUTION SLIDER 4.6.5 fullwidth mode -->
+                                <div id="rev_slider_1_1" class="rev_slider fullwidthabanner" style="display:none;max-height:545px;height:545px;">
+                                    <ul>
+                                        <!-- SLIDE  -->
+                                        <li data-transition="parallaxhorizontal,zoomin" data-slotamount="7" data-masterspeed="900" data-thumb="images/8.jpg" data-saveperformance="off" data-title="Welcome">
+                                            <!-- MAIN IMAGE -->
+                                            <img src="images/8.jpg" alt="8" data-bgposition="left top" data-kenburns="on" data-duration="9000" data-ease="Linear.easeNone" data-bgfit="100" data-bgfitend="100" data-bgpositionend="right bottom">
+                                            <!-- LAYERS -->
+                                            <!-- LAYER NR. 1 -->
+                                            <div class="tp-caption lfb rs-parallaxlevel-0"
+                                                 data-x="center" data-hoffset="0"
+                                                 data-y="10"
+                                                 data-speed="700"
+                                                 data-start="500"
+                                                 data-easing="Quad.easeIn"
+                                                 data-elementdelay="0.1"
+                                                 data-endelementdelay="0.1"
+                                                 data-endspeed="300"
+                                                 style="z-index: 5;">
+                                                <img src="images/mans.png" alt="">
+                                            </div>
+                                            <!-- LAYER NR. 2 -->
+                                            <div class="tp-caption largeboldgrey sfl tp-resizeme rs-parallaxlevel-0"
+                                                 data-x="30"
+                                                 data-y="109"
+                                                 data-speed="300"
+                                                 data-start="600"
+                                                 data-easing="Quad.easeIn"
+                                                 data-splitin="none"
+                                                 data-splitout="none"
+                                                 data-elementdelay="0.1"
+                                                 data-endelementdelay="0.1"
+                                                 data-endspeed="300"
+                                                 style="z-index: 6; max-width: auto; max-height: auto; white-space: nowrap;">
+                                                WELCOME
+                                            </div>
+                                            <!-- LAYER NR. 3 -->
+                                            <div class="tp-caption largeboldgrey sfl tp-resizeme rs-parallaxlevel-0"
+                                                 data-x="30"
+                                                 data-y="184"
+                                                 data-speed="300"
+                                                 data-start="700"
+                                                 data-easing="Quad.easeIn"
+                                                 data-splitin="none"
+                                                 data-splitout="none"
+                                                 data-elementdelay="0.1"
+                                                 data-endelementdelay="0.1"
+                                                 data-endspeed="300"
+                                                 style="z-index: 7; max-width: auto; max-height: auto; white-space: nowrap;">
+                                                TO
+                                            </div>
+                                            <!-- LAYER NR. 4 -->
+                                            <div class="tp-caption largeboldgreycolor sfl tp-resizeme rs-parallaxlevel-0"
+                                                 data-x="30"
+                                                 data-y="254"
+                                                 data-speed="300"
+                                                 data-start="800"
+                                                 data-easing="Power3.easeInOut"
+                                                 data-splitin="none"
+                                                 data-splitout="none"
+                                                 data-elementdelay="0.1"
+                                                 data-endelementdelay="0.1"
+                                                 data-endspeed="300"
+                                                 style="z-index: 8; max-width: auto; max-height: auto; white-space: nowrap;">
+                                                <span class="color">ORANE</span>
+                                            </div>
+                                            <!-- LAYER NR. 5 -->
+                                            <div class="tp-caption banner-p-1 sfb tp-resizeme rs-parallaxlevel-0"
+                                                 data-x="30"
+                                                 data-y="334"
+                                                 data-speed="300"
+                                                 data-start="900"
+                                                 data-easing="Power3.easeInOut"
+                                                 data-splitin="none"
+                                                 data-splitout="none"
+                                                 data-elementdelay="0.1"
+                                                 data-endelementdelay="0.1"
+                                                 data-endspeed="300"
+                                                 style="z-index: 9; max-width: 340px; max-height: auto; white-space: normal;">
+                                                <p>
+                                                    Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                                    dolore eu fugiat nulla pariatur. Excepteur sint occaecat cup
+                                                    non proident, sunt in culpa qui officia deserunt.
+                                                </p>
+                                                <span class="tour">TAKE TOUR</span>
+                                            </div>
+                                            <!-- LAYER NR. 6 -->
+                                            <div class="tp-caption largeboldgrey sfr tp-resizeme rs-parallaxlevel-0"
+                                                 data-x="right" data-hoffset="-30"
+                                                 data-y="100"
+                                                 data-speed="300"
+                                                 data-start="1000"
+                                                 data-easing="Quad.easeIn"
+                                                 data-splitin="none"
+                                                 data-splitout="none"
+                                                 data-elementdelay="0.1"
+                                                 data-endelementdelay="0.1"
+                                                 data-endspeed="300"
+                                                 style="z-index: 10; max-width: auto; max-height: auto; white-space: nowrap;">
+                                                WE LOVE
+                                            </div>
+                                            <!-- LAYER NR. 7 -->
+                                            <div class="tp-caption largeboldgrey sfr tp-resizeme rs-parallaxlevel-0"
+                                                 data-x="right" data-hoffset="-30"
+                                                 data-y="184"
+                                                 data-speed="300"
+                                                 data-start="1100"
+                                                 data-easing="Quad.easeIn"
+                                                 data-splitin="none"
+                                                 data-splitout="none"
+                                                 data-elementdelay="0.1"
+                                                 data-endelementdelay="0.1"
+                                                 data-endspeed="300"
+                                                 style="z-index: 11; max-width: auto; max-height: auto; white-space: nowrap;">
+                                                TO
+                                            </div>
+                                            <!-- LAYER NR. 8 -->
+                                            <div class="tp-caption largeboldgreycolor sfr tp-resizeme rs-parallaxlevel-0"
+                                                 data-x="right" data-hoffset="-30"
+                                                 data-y="254"
+                                                 data-speed="300"
+                                                 data-start="1200"
+                                                 data-easing="Power3.easeInOut"
+                                                 data-splitin="none"
+                                                 data-splitout="none"
+                                                 data-elementdelay="0.1"
+                                                 data-endelementdelay="0.1"
+                                                 data-endspeed="300"
+                                                 style="z-index: 12; max-width: auto; max-height: auto; white-space: nowrap;">
+                                                <span class="color">DESIGN</span>
+                                            </div>
+                                            <!-- LAYER NR. 9 -->
+                                            <div class="tp-caption banner-p-2 sfb tp-resizeme rs-parallaxlevel-0"
+                                                 data-x="right" data-hoffset="-30"
+                                                 data-y="334"
+                                                 data-speed="300"
+                                                 data-start="1300"
+                                                 data-easing="Power3.easeInOut"
+                                                 data-splitin="none"
+                                                 data-splitout="none"
+                                                 data-elementdelay="0.1"
+                                                 data-endelementdelay="0.1"
+                                                 data-endspeed="300"
+                                                 style="z-index: 13; max-width: 340px; max-height: auto; white-space: normal;">
+                                                <p>
+                                                    Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                                    dolore eu fugiat nulla pariatur. Excepteur sint occaecat cup
+                                                    non proident, sunt in culpa qui officia deserunt.
+                                                </p>
+                                                <span class="tour" style="float: right;">TAKE TOUR</span>
+                                            </div>
+                                        </li>
+                                        <!-- SLIDE  -->
+                                        <li data-transition="random" data-slotamount="7" data-masterspeed="300" data-thumb="images/i17.jpg" data-saveperformance="off" data-title="Best Team">
+                                            <!-- MAIN IMAGE -->
+                                            <img src="images/i17.jpg" alt="i17" data-bgposition="center top" data-kenburns="on" data-duration="12000" data-ease="Linear.easeNone" data-bgfit="100" data-bgfitend="100" data-bgpositionend="center bottom">
+                                            <!-- LAYERS -->
+                                            <!-- LAYER NR. 1 -->
+                                            <div class="tp-caption lfb stb rs-parallaxlevel-0"
+                                                 data-x="center" data-hoffset="0"
+                                                 data-y="12"
+                                                 data-speed="600"
+                                                 data-start="500"
+                                                 data-easing="Power4.easeInOut"
+                                                 data-elementdelay="0.1"
+                                                 data-endelementdelay="0.1"
+                                                 data-endspeed="300"
+                                                 data-endeasing="Power1.easeOut"
+                                                 style="z-index: 5;">
+                                                <img src="images/team.png" alt="">
+                                            </div>
+                                            <!-- LAYER NR. 2 -->
+                                            <div class="tp-caption mediumbggrey skewfromleftshort tp-resizeme rs-parallaxlevel-0"
+                                                 data-x="20"
+                                                 data-y="100"
+                                                 data-speed="300"
+                                                 data-start="520"
+                                                 data-easing="Linear.easeNone"
+                                                 data-splitin="none"
+                                                 data-splitout="none"
+                                                 data-elementdelay="0.1"
+                                                 data-endelementdelay="0.1"
+                                                 data-endspeed="300"
+                                                 style="z-index: 6; max-width: auto; max-height: auto; white-space: nowrap;">
+                                                An Award Winning Customer Support
+                                            </div>
+                                            <!-- LAYER NR. 3 -->
+                                            <div class="tp-caption mediumbggrey skewfromleftshort tp-resizeme rs-parallaxlevel-0"
+                                                 data-x="20"
+                                                 data-y="155"
+                                                 data-speed="300"
+                                                 data-start="630"
+                                                 data-easing="Linear.easeNone"
+                                                 data-splitin="none"
+                                                 data-splitout="none"
+                                                 data-elementdelay="0.1"
+                                                 data-endelementdelay="0.1"
+                                                 data-endspeed="300"
+                                                 style="z-index: 7; max-width: auto; max-height: auto; white-space: nowrap;">
+                                                Creative Ideas
+                                            </div>
+                                            <!-- LAYER NR. 4 -->
+                                            <div class="tp-caption mediumbggrey skewfromleftshort tp-resizeme rs-parallaxlevel-0"
+                                                 data-x="20"
+                                                 data-y="210"
+                                                 data-speed="300"
+                                                 data-start="740"
+                                                 data-easing="Linear.easeNone"
+                                                 data-splitin="none"
+                                                 data-splitout="none"
+                                                 data-elementdelay="0.1"
+                                                 data-endelementdelay="0.1"
+                                                 data-endspeed="300"
+                                                 style="z-index: 8; max-width: auto; max-height: auto; white-space: nowrap;">
+                                                Unique Concepts
+                                            </div>
+                                            <!-- LAYER NR. 5 -->
+                                            <div class="tp-caption mediumbggrey skewfromleftshort tp-resizeme rs-parallaxlevel-0"
+                                                 data-x="20"
+                                                 data-y="265"
+                                                 data-speed="300"
+                                                 data-start="850"
+                                                 data-easing="Linear.easeNone"
+                                                 data-splitin="none"
+                                                 data-splitout="none"
+                                                 data-elementdelay="0.1"
+                                                 data-endelementdelay="0.1"
+                                                 data-endspeed="300"
+                                                 style="z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;">
+                                                Retina Ready
+                                            </div>
+                                            <!-- LAYER NR. 6 -->
+                                            <div class="tp-caption mediumbggrey skewfromleftshort tp-resizeme rs-parallaxlevel-0"
+                                                 data-x="20"
+                                                 data-y="320"
+                                                 data-speed="300"
+                                                 data-start="960"
+                                                 data-easing="Linear.easeNone"
+                                                 data-splitin="none"
+                                                 data-splitout="none"
+                                                 data-elementdelay="0.1"
+                                                 data-endelementdelay="0.1"
+                                                 data-endspeed="300"
+                                                 style="z-index: 10; max-width: auto; max-height: auto; white-space: nowrap;">
+                                                Clean Coding
+                                            </div>
+                                            <!-- LAYER NR. 7 -->
+                                            <div class="tp-caption mediumbggrey skewfromleftshort tp-resizeme rs-parallaxlevel-0"
+                                                 data-x="20"
+                                                 data-y="375"
+                                                 data-speed="300"
+                                                 data-start="1070"
+                                                 data-easing="Linear.easeNone"
+                                                 data-splitin="none"
+                                                 data-splitout="none"
+                                                 data-elementdelay="0.1"
+                                                 data-endelementdelay="0.1"
+                                                 data-endspeed="300"
+                                                 style="z-index: 11; max-width: auto; max-height: auto; white-space: nowrap;">
+                                                Responsive Design
+                                            </div>
+                                            <!-- LAYER NR. 8 -->
+                                            <div class="tp-caption mediumbgcolor skewfromrightshort tp-resizeme rs-parallaxlevel-0"
+                                                 data-x="right" data-hoffset="-20"
+                                                 data-y="101"
+                                                 data-speed="300"
+                                                 data-start="520"
+                                                 data-easing="Linear.easeNone"
+                                                 data-splitin="none"
+                                                 data-splitout="none"
+                                                 data-elementdelay="0.1"
+                                                 data-endelementdelay="0.1"
+                                                 data-endspeed="300"
+                                                 style="z-index: 12; max-width: auto; max-height: auto; white-space: nowrap;">
+                                                Clean & Eye Catching Design
+                                            </div>
+                                            <!-- LAYER NR. 9 -->
+                                            <div class="tp-caption mediumbgcolor skewfromrightshort tp-resizeme rs-parallaxlevel-0"
+                                                 data-x="right" data-hoffset="-20"
+                                                 data-y="155"
+                                                 data-speed="300"
+                                                 data-start="630"
+                                                 data-easing="Linear.easeNone"
+                                                 data-splitin="none"
+                                                 data-splitout="none"
+                                                 data-elementdelay="0.1"
+                                                 data-endelementdelay="0.1"
+                                                 data-endspeed="300"
+                                                 style="z-index: 13; max-width: auto; max-height: auto; white-space: nowrap;">
+                                                24/7 Support
+                                            </div>
+                                            <!-- LAYER NR. 10 -->
+                                            <div class="tp-caption mediumbgcolor skewfromrightshort tp-resizeme rs-parallaxlevel-0"
+                                                 data-x="right" data-hoffset="-20"
+                                                 data-y="210"
+                                                 data-speed="300"
+                                                 data-start="740"
+                                                 data-easing="Linear.easeNone"
+                                                 data-splitin="none"
+                                                 data-splitout="none"
+                                                 data-elementdelay="0.1"
+                                                 data-endelementdelay="0.1"
+                                                 data-endspeed="300"
+                                                 style="z-index: 14; max-width: auto; max-height: auto; white-space: nowrap;">
+                                                Bootstrap 3 Ready
+                                            </div>
+                                            <!-- LAYER NR. 11 -->
+                                            <div class="tp-caption mediumbgcolor skewfromrightshort tp-resizeme rs-parallaxlevel-0"
+                                                 data-x="right" data-hoffset="-20"
+                                                 data-y="265"
+                                                 data-speed="300"
+                                                 data-start="850"
+                                                 data-easing="Linear.easeNone"
+                                                 data-splitin="none"
+                                                 data-splitout="none"
+                                                 data-elementdelay="0.1"
+                                                 data-endelementdelay="0.1"
+                                                 data-endspeed="300"
+                                                 style="z-index: 15; max-width: auto; max-height: auto; white-space: nowrap;">
+                                                Valid HTML5 & CSS3 Files
+                                            </div>
+                                            <!-- LAYER NR. 12 -->
+                                            <div class="tp-caption mediumbgcolor skewfromrightshort tp-resizeme rs-parallaxlevel-0"
+                                                 data-x="right" data-hoffset="-20"
+                                                 data-y="320"
+                                                 data-speed="300"
+                                                 data-start="960"
+                                                 data-easing="Linear.easeNone"
+                                                 data-splitin="none"
+                                                 data-splitout="none"
+                                                 data-elementdelay="0.1"
+                                                 data-endelementdelay="0.1"
+                                                 data-endspeed="300"
+                                                 style="z-index: 16; max-width: auto; max-height: auto; white-space: nowrap;">
+                                                Documentation Ready
+                                            </div>
+                                            <!-- LAYER NR. 13 -->
+                                            <div class="tp-caption mediumbgcolor skewfromrightshort tp-resizeme rs-parallaxlevel-0"
+                                                 data-x="right" data-hoffset="-20"
+                                                 data-y="375"
+                                                 data-speed="300"
+                                                 data-start="1070"
+                                                 data-easing="Linear.easeNone"
+                                                 data-splitin="none"
+                                                 data-splitout="none"
+                                                 data-elementdelay="0.1"
+                                                 data-endelementdelay="0.1"
+                                                 data-endspeed="300"
+                                                 style="z-index: 17; max-width: auto; max-height: auto; white-space: nowrap;">
+                                                Designed With love
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
+                                </div>
+
+                                <style scoped>
+                                    .tp-caption.largeboldgrey, .largeboldgrey {
+                                        background-color: transparent;
+                                        color: rgb(102,102,102);
+                                        font-family: "Oswald",sans-serif;
+                                        font-size: 60px;
+                                        font-weight: 800;
+                                        letter-spacing: 3px;
+                                        line-height: 60px;
+                                        margin: 0;
+                                        padding: 1px 4px 0;
+                                        text-decoration: none;
+                                        text-shadow: none;
+                                        border-width: 0px;
+                                        border-color: rgb(255,214,88);
+                                        border-style: none;
+                                    }
+
+                                    .tp-caption.largeboldgreycolor, .largeboldgreycolor {
+                                        background-color: transparent;
+                                        color: #0dac9e;
+                                        font-family: "Oswald",sans-serif;
+                                        font-size: 60px;
+                                        font-weight: 800;
+                                        letter-spacing: 3px;
+                                        line-height: 60px;
+                                        margin: 0;
+                                        padding: 1px 4px 0px 4px;
+                                        text-decoration: none;
+                                        text-shadow: none;
+                                        border-width: 0px;
+                                        border-color: rgb(255,214,88);
+                                        border-style: none;
+                                    }
+
+                                    .tp-caption.banner-p-1, .banner-p-1 {
+                                        font-family: "Lato",sans-serif;
+                                        font-size: 14px;
+                                        line-height: 1.5;
+                                        text-align: left;
+                                        background-color: transparent;
+                                        text-decoration: none;
+                                        border-width: 0px;
+                                        border-color: rgb(34,34,34);
+                                        border-style: none;
+                                    }
+
+                                    .tp-caption.banner-p-2, .banner-p-2 {
+                                        font-family: "Lato",sans-serif;
+                                        font-size: 14px;
+                                        line-height: 1.5;
+                                        text-align: right;
+                                        border-width: 0px;
+                                        border-color: rgb(34,34,34);
+                                        border-style: none;
+                                    }
+
+                                    .tp-caption.mediumbggrey, .mediumbggrey {
+                                        background-color: rgba(255,255,255,0.65);
+                                        color: #494949;
+                                        font-family: "Oswald",sans-serif;
+                                        font-size: 20px;
+                                        font-weight: 300;
+                                        line-height: 20px;
+                                        padding: 10px;
+                                        text-align: right;
+                                        text-decoration: none;
+                                        border-width: 0px;
+                                        border-color: rgb(255,214,88);
+                                        border-style: none;
+                                    }
+
+                                    .tp-caption.mediumbgcolor, .mediumbgcolor {
+                                        background-color: rgba(13,172,158,0.85);
+                                        color: #fff;
+                                        font-family: "Oswald",sans-serif;
+                                        font-size: 20px;
+                                        font-weight: 300;
+                                        line-height: 20px;
+                                        padding: 10px;
+                                        text-align: right;
+                                        text-decoration: none;
+                                        border-width: 0px;
+                                        border-color: rgb(255,214,88);
+                                        border-style: none;
+                                    }
+                                </style>
+                                <script type="text/javascript">
+
+                                    /******************************************
+                                        -	PREPARE PLACEHOLDER FOR SLIDER	-
+                                    ******************************************/
+
+
+                                    var setREVStartSize = function () {
+                                        var tpopt = new Object();
+                                        tpopt.startwidth = 1170;
+                                        tpopt.startheight = 545;
+                                        tpopt.container = jQuery('#rev_slider_1_1');
+                                        tpopt.fullScreen = "off";
+                                        tpopt.forceFullWidth = "off";
+
+                                        tpopt.container.closest(".rev_slider_wrapper").css({ height: tpopt.container.height() }); tpopt.width = parseInt(tpopt.container.width(), 0); tpopt.height = parseInt(tpopt.container.height(), 0); tpopt.bw = tpopt.width / tpopt.startwidth; tpopt.bh = tpopt.height / tpopt.startheight; if (tpopt.bh > tpopt.bw) tpopt.bh = tpopt.bw; if (tpopt.bh < tpopt.bw) tpopt.bw = tpopt.bh; if (tpopt.bw < tpopt.bh) tpopt.bh = tpopt.bw; if (tpopt.bh > 1) { tpopt.bw = 1; tpopt.bh = 1 } if (tpopt.bw > 1) { tpopt.bw = 1; tpopt.bh = 1 } tpopt.height = Math.round(tpopt.startheight * (tpopt.width / tpopt.startwidth)); if (tpopt.height > tpopt.startheight && tpopt.autoHeight != "on") tpopt.height = tpopt.startheight; if (tpopt.fullScreen == "on") { tpopt.height = tpopt.bw * tpopt.startheight; var cow = tpopt.container.parent().width(); var coh = jQuery(window).height(); if (tpopt.fullScreenOffsetContainer != undefined) { try { var offcontainers = tpopt.fullScreenOffsetContainer.split(","); jQuery.each(offcontainers, function (e, t) { coh = coh - jQuery(t).outerHeight(true); if (coh < tpopt.minFullScreenHeight) coh = tpopt.minFullScreenHeight }) } catch (e) { } } tpopt.container.parent().height(coh); tpopt.container.height(coh); tpopt.container.closest(".rev_slider_wrapper").height(coh); tpopt.container.closest(".forcefullwidth_wrapper_tp_banner").find(".tp-fullwidth-forcer").height(coh); tpopt.container.css({ height: "100%" }); tpopt.height = coh; } else { tpopt.container.height(tpopt.height); tpopt.container.closest(".rev_slider_wrapper").height(tpopt.height); tpopt.container.closest(".forcefullwidth_wrapper_tp_banner").find(".tp-fullwidth-forcer").height(tpopt.height); }
+                                    };
+
+                                    /* CALL PLACEHOLDER */
+                                    setREVStartSize();
+
+
+                                    var tpj = jQuery;
+                                    tpj.noConflict();
+                                    var revapi1;
+
+                                    tpj(document).ready(function () {
+
+                                        if (tpj('#rev_slider_1_1').revolution == undefined) {
+                                            revslider_showDoubleJqueryError('#rev_slider_1_1');
+                                        } else {
+                                            revapi1 = tpj('#rev_slider_1_1').show().revolution(
+                                             {
+                                                 dottedOverlay: "none",
+                                                 delay: 9000,
+                                                 startwidth: 1170,
+                                                 startheight: 545,
+                                                 hideThumbs: 200,
+
+                                                 thumbWidth: 100,
+                                                 thumbHeight: 50,
+                                                 thumbAmount: 2,
+
+
+                                                 simplifyAll: "off",
+
+                                                 navigationType: "none",
+                                                 navigationArrows: "none",
+                                                 navigationStyle: "preview4",
+
+                                                 touchenabled: "on",
+                                                 onHoverStop: "off",
+                                                 nextSlideOnWindowFocus: "off",
+
+                                                 swipe_threshold: 75,
+                                                 swipe_min_touches: 1,
+                                                 drag_block_vertical: false,
+
+                                                 parallax: "mouse+scroll",
+                                                 parallaxBgFreeze: "on",
+                                                 parallaxLevels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],
+
+
+                                                 keyboardNavigation: "off",
+
+                                                 navigationHAlign: "center",
+                                                 navigationVAlign: "bottom",
+                                                 navigationHOffset: 0,
+                                                 navigationVOffset: 20,
+
+                                                 soloArrowLeftHalign: "left",
+                                                 soloArrowLeftValign: "center",
+                                                 soloArrowLeftHOffset: 20,
+                                                 soloArrowLeftVOffset: 0,
+
+                                                 soloArrowRightHalign: "right",
+                                                 soloArrowRightValign: "center",
+                                                 soloArrowRightHOffset: 20,
+                                                 soloArrowRightVOffset: 0,
+
+                                                 shadow: 0,
+                                                 fullWidth: "on",
+                                                 fullScreen: "off",
+
+                                                 spinner: "off",
+
+                                                 stopLoop: "on",
+                                                 stopAfterLoops: 0,
+                                                 stopAtSlide: 2,
+
+                                                 shuffle: "off",
+
+                                                 autoHeight: "off",
+                                                 forceFullWidth: "off",
+
+
+                                                 hideTimerBar: "on",
+                                                 hideThumbsOnMobile: "off",
+                                                 hideNavDelayOnMobile: 1500,
+                                                 hideBulletsOnMobile: "off",
+                                                 hideArrowsOnMobile: "off",
+                                                 hideThumbsUnderResolution: 0,
+
+                                                 hideSliderAtLimit: 0,
+                                                 hideCaptionAtLimit: 0,
+                                                 hideAllCaptionAtLilmit: 0,
+                                                 startWithSlide: 0
+                                             });
+
+
+
+                                        }
+                                    });	/*ready*/
+
+                                </script>
+
+                            </div><!-- END REVOLUTION SLIDER -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="vc_row wpb_row vc_row-fluid">
+                <div class="vc_col-sm-12 wpb_column vc_column_container">
+                    <div class="wpb_wrapper">
+                        <section class='services service-bottom'>
+                            <div class='container'>
+                                <div class='row'>
+                                    <h2><span class='color'>SKILLS AND ABILITIES </span></h2>
+                                    <p class='tag-heading'>Lorem ipsum dolor sit amet, consectetur adipisc elit. Fusce scelerisque nibh et neque faucibus suscipit nulla pariatur cillum.</p>
+                                    <div class='service-wrap'>
+                                        <div class='col-md-4 service wow fadeIn' data-wow-duration='1s' data-wow-delay='.2s'>
+                                            <div class='row'>
+                                                <div class='col-md-2'>
+                                                    <div class='icon'>
+                                                        <i class='fa fa-file-code-o fa-3x'></i>
+                                                    </div>
+                                                </div>
+
+                                                <div class='col-md-10'>
+                                                    <div class='service-right'>
+                                                        <a class='service-head' href='#' target=''>HTML5, CSS3, BOOTSTRAP</a>
+                                                        <p></p>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisc elit. Fusce scelerisque nibh et neque faucibus suscipit nulla pariatur cillum.</p>
+                                                        <p></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><div class='col-md-4 service wow fadeIn' data-wow-duration='1s' data-wow-delay='.2s'>
+                                            <div class='row'>
+                                                <div class='col-md-2'>
+                                                    <div class='icon'>
+                                                        <i class='fa fa-arrows-alt fa-3x'></i>
+                                                    </div>
+                                                </div>
+
+                                                <div class='col-md-10'>
+                                                    <div class='service-right'>
+                                                        <a class='service-head' href='#' target=''>JQUERY, ANGULARJS</a>
+                                                        <p></p>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisc elit. Fusce scelerisque nibh et neque faucibus suscipit nulla pariatur cillum.</p>
+                                                        <p></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><div class='col-md-4 service wow fadeIn' data-wow-duration='1s' data-wow-delay='.2s'>
+                                            <div class='row'>
+                                                <div class='col-md-2'>
+                                                    <div class='icon'>
+                                                        <i class='fa fa-check-square-o fa-3x'></i>
+                                                    </div>
+                                                </div>
+
+                                                <div class='col-md-10'>
+                                                    <div class='service-right'>
+                                                        <a class='service-head' href='#' target=''>C#, JAVA, RUBY, NODEJS</a>
+                                                        <p></p>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisc elit. Fusce scelerisque nibh et neque faucibus suscipit nulla pariatur cillum.</p>
+                                                        <p></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><div class='col-md-4 service wow fadeIn' data-wow-duration='1s' data-wow-delay='.2s'>
+                                            <div class='row'>
+                                                <div class='col-md-2'>
+                                                    <div class='icon'>
+                                                        <i class='fa fa-suitcase fa-3x'></i>
+                                                    </div>
+                                                </div>
+
+                                                <div class='col-md-10'>
+                                                    <div class='service-right'>
+                                                        <a class='service-head' href='#' target=''>ORACLE, MS SQL, MY SQL</a>
+                                                        <p></p>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisc elit. Fusce scelerisque nibh et neque faucibus suscipit nulla pariatur cillum.</p>
+                                                        <p></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><div class='col-md-4 service wow fadeIn' data-wow-duration='1s' data-wow-delay='.2s'>
+                                            <div class='row'>
+                                                <div class='col-md-2'>
+                                                    <div class='icon'>
+                                                        <i class='fa fa-heart-o fa-3x'></i>
+                                                    </div>
+                                                </div>
+
+                                                <div class='col-md-10'>
+                                                    <div class='service-right'>
+                                                        <a class='service-head' href='#' target=''>ANDROID, IOS, WINDOW PHONE</a>
+                                                        <p></p>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisc elit. Fusce scelerisque nibh et neque faucibus suscipit nulla pariatur cillum.</p>
+                                                        <p></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><div class='col-md-4 service wow fadeIn' data-wow-duration='1s' data-wow-delay='.2s'>
+                                            <div class='row'>
+                                                <div class='col-md-2'>
+                                                    <div class='icon'>
+                                                        <i class='fa fa-life-ring fa-3x'></i>
+                                                    </div>
+                                                </div>
+
+                                                <div class='col-md-10'>
+                                                    <div class='service-right'>
+                                                        <a class='service-head' href='#' target=''>WEBRTC APPLICATION</a>
+                                                        <p></p>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisc elit. Fusce scelerisque nibh et neque faucibus suscipit nulla pariatur cillum.</p>
+                                                        <p></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='clearfix'></div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="vc_row wpb_row vc_row-fluid">
+                <div class="vc_col-sm-12 wpb_column vc_column_container">
+                    <div class="wpb_wrapper">
+                        <section class='welcome'>
+                            <div class='container'>
+                                <div class='col-md-12 wow fadeIn' data-wow-duration='1s' data-wow-delay='.4s'>
+                                    <h2><span class='color'>OUR SERVICES</span></h2>
+                                    <p>Orane is a unique and stylish template and everybody loves it. Overall designing is a good example of awesome designing. Orane gives you the feeling of love towards web designing. GO GO and Buy This Template!</p>
+                                </div>
+                                <div class='col-md-12 wow fadeInUp' data-wow-duration='1s' data-wow-delay='.4s'>
+                                    <img src='wp-content/plugins/orane_core/images/imacs-2.png' alt='imac'>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div><div class="vc_row wpb_row vc_row-fluid">
+                <div class="vc_col-sm-12 wpb_column vc_column_container">
+                    <div class="wpb_wrapper">
+                        <section class='mt-px' style='background-image:url(wp-content/plugins/orane_core/images/tiles.jpg);'>
+                            <div class='container'>
+
+                                <div class='col-md-4 wow fadeInLeft' data-wow-duration='1s' data-wow-delay='.6s'>
+                                    <div class='moving-zone'>
+                                        <div class='popup shadow-1'>
+                                            <div class='popup-content'>
+                                                <div class='popup-text'>
+                                                    <h2>WEB APPLICATIONS</h2>
+                                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><div class='col-md-4 wow fadeInLeft' data-wow-duration='1s' data-wow-delay='.6s'>
+                                    <div class='moving-zone'>
+                                        <div class='popup shadow-1'>
+                                            <div class='popup-content'>
+                                                <div class='popup-text'>
+                                                    <h2>MOBILE APPLICATIONS</h2>
+                                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><div class='col-md-4 wow fadeInLeft' data-wow-duration='1s' data-wow-delay='.6s'>
+                                    <div class='moving-zone'>
+                                        <div class='popup shadow-1'>
+                                            <div class='popup-content'>
+                                                <div class='popup-text'>
+                                                    <h2>DOMAIN & HOSTING</h2>
+                                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugia.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div><div class="vc_row wpb_row vc_row-fluid">
+                <div class="vc_col-sm-12 wpb_column vc_column_container">
+                    <div class="wpb_wrapper">
+                        <section class='ideas' style='background:url(wp-content/uploads/2014/10/px.jpg) no-repeat scroll 0 0 / cover  rgba(0, 0, 0, 0)'>
+                            <div class='container'>
+                                <div class='col-md-4 wow fadeIn' data-wow-duration='1s' data-wow-delay='.2s'>
+                                    <img src='wp-content/plugins/orane_core/images/bulbs.png' alt='bulbs'>
+                                </div>
+                                <div class='col-md-8 idea-text wow fadeIn' data-wow-duration='1s' data-wow-delay='.4s'>
+                                    <h2>WE HAVE IDEAS FOR EVERYONE</h2>
+                                    <p></p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce scelerisque nibh et neque faucibus suscipit. Sed auctor ipsum ut tellus faucibus tincidunt. Curabitur non quam facilisis, rhoncus ligula ac, pellentesque augue ipsum. Fusce scelerisque nibh et neque faucibus suscipit. Sed auctor ipsum ut tellus faucibus tincidunt.</p>
+                                    <p></p>
+                                    <a href='http://localhost/word/?page_id=2' class='lrn-more'></a>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="vc_row wpb_row vc_row-fluid">
+                <div class="vc_col-sm-12 wpb_column vc_column_container">
+                    <div class="wpb_wrapper">
+                        <section class='specialities' style='background:url(wp-content/plugins/orane_core/images/pattern/1.png) repeat scroll 0 0 rgba(0, 0, 0, 0)'>
+                            <div class='container'>
+
+                                <div class='col-md-12 tag-heading'>
+                                    <h2>SKILLS AND ABILITIES</h2>
+                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum dolore eu fugiat nulla pariatur esse cillum dolore eu fugiat nulla pariatur.</p>
+                                </div>
+
+                                <div class='row piecharts' id='pie-charts'>
+
+                                    <div class='col-md-3'>
+                                        <span class='chart blue-circle' data-percent='100' data-delay='100'>
+                                            <span class='percent'></span>
+                                            <span class='skill-name'>html5, css3, bootstrap</span>
+                                        </span>
+                                    </div><div class='col-md-3'>
+                                        <span class='chart blue-circle' data-percent='85' data-delay='100'>
+                                            <span class='percent'></span>
+                                            <span class='skill-name'>JQUERY, ANGULARJS</span>
+                                        </span>
+                                    </div><div class='col-md-3'>
+                                        <span class='chart blue-circle' data-percent='75' data-delay='100'>
+                                            <span class='percent'></span>
+                                            <span class='skill-name'>C#, JAVA, RUBY, NODEJS</span>
+                                        </span>
+                                    </div><div class='col-md-3'>
+                                        <span class='chart blue-circle' data-percent='75' data-delay='100'>
+                                            <span class='percent'></span>
+                                            <span class='skill-name'>ANDROID, IOS, WINDOW PHONE</span>
+                                        </span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>-->
+            <div class="vc_row wpb_row vc_row-fluid">
+                <div class="vc_col-sm-12 wpb_column vc_column_container">
+                    <div class="wpb_wrapper">
+                        <section class='seo' style='background:url(wp-content/plugins/orane_core/images/seo-2.jpg) no-repeat scroll 0 0 / cover  rgba(0, 0, 0, 0)'>
+                            <div class='container'>
+                                <div class='col-md-8'>
+                                    <div class='box-1 shadow-1'>
+                                        <h2>GROW <span class='color'>BUSINESS</span></h2>
+                                        <span id='typed'></span>
+                                        <p></p>
+                                        <p>Orane comes up with ultimate design concept that everyone can use this. The design is unique and eye catching. Different versions of the design are available. Orane comes up with ultimate design concept that everyone can use this. The design is unique and eye catching. Different versions of the design are available. Orane comes up with ultimate design concept that everyone can use this. The design is unique and eye catching. Different versions of the design are available.</p>
+                                        <p></p>
+                                        <a class='btn-1' href='#asd'> &nbsp;<i class='fa fa-hand-o-right '></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="vc_row wpb_row vc_row-fluid">
+                <div class="vc_col-sm-12 wpb_column vc_column_container">
+                    <div class="wpb_wrapper">
+                        <section class='seo-2' style='background-image:url(wp-content/plugins/orane_core/images/pattern/10.png);'>
+                            <div class='container'>
+                                <div class='col-md-7 wow fadeIn' data-wow-duration='1s' data-wow-delay='.6s'>
+                                    <img src='wp-content/plugins/orane_core/images/seo-2.png' alt='bulbs'>
+                                </div>
+
+                                <div class='col-md-5 wow fadeInRight' data-wow-duration='1s' data-wow-delay='.6s'>
+                                    <h2>SEO Ready <span class='color'>Coding</span></h2>
+                                    <p>
+                                        <br />
+                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillumdolo eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce scelerisque nibh et neque faucibus suscipit. Sed auctor ipsum ut tellus faucibus tincidunt.
+                                    </p>
+                                    <p></p>
+
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="vc_row wpb_row vc_row-fluid">
+                <div class="vc_col-sm-12 wpb_column vc_column_container">
+                    <div class="wpb_wrapper">
+                        <section class='macs'>
+                            <div class='container'>
+                                <div class='wow fadeIn' data-wow-duration='1s' data-wow-delay='.6s'>
+                                    <h2>Say Hello To <span class='color'>The Most</span> Unique <span class='color'>HTML5</span> Template</h2>
+                                    <p></p>
+                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                    <p></p>
+                                </div>
+
+                                <div class='row gap'>
+                                    <div class='col-md-3'>
+                                        <ul class='right-ul'>
+                                            <li class='wow fadeInLeft' data-wow-duration='1s' data-wow-delay='.6s'><i class='fa fa-empire '></i> Most Powerful Concept </li>
+                                            <li class='wow fadeInLeft' data-wow-duration='1s' data-wow-delay='.8s'><i class='fa fa-cube '></i> 3D Testimonial Slider </li>
+                                            <li class='wow fadeInLeft' data-wow-duration='1s' data-wow-delay='1s'><i class='fa fa-leaf '></i> Font Awesome 4.1</li>
+                                            <li class='wow fadeInLeft' data-wow-duration='1s' data-wow-delay='1.2s'><i class='fa fa-paper-plane '></i> Unique Design </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class='col-md-6 wow fadeInUp' data-wow-duration='1s' data-wow-delay='.4s'>
+                                        <img class='mac' src='wp-content/plugins/orane_core/images/macs.png' alt='' />
+                                    </div>
+
+                                    <div class='col-md-3'>
+                                        <ul class='left-ul'>
+                                            <li class='wow fadeInRight' data-wow-duration='1s' data-wow-delay='.6s'> Most Powerful Support <i class='fa fa-life-saver '></i></li>
+                                            <li class='wow fadeInRight' data-wow-duration='1s' data-wow-delay='.8s'> Eye Catching Design <i class='fa fa-eye '></i></li>
+                                            <li class='wow fadeInRight' data-wow-duration='1s' data-wow-delay='1s'> Google Web Font <i class='fa fa-text-height '></i></li>
+                                            <li class='wow fadeInRight' data-wow-duration='1s' data-wow-delay='1.2s'> HTML5/CSS3 <i class='fa fa-html5 '></i></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="vc_row wpb_row vc_row-fluid">
+                <div class="vc_col-sm-12 wpb_column vc_column_container">
+                    <div class="wpb_wrapper">
+                        <section class='top-support'>
+                            <div class='container'>
+                                <div class='col-md-8 wow fadeInLeft' data-wow-duration='2.5s' data-wow-delay='.2s'>
+                                    <img src='wp-content/plugins/orane_core/images/slide10.png' alt='slide'>
+                                </div>
+
+                                <div class='col-md-4 wow fadeInRight' data-wow-duration='1s' data-wow-delay='.6s'>
+                                    <h2><span class='color'>TOGETHER SUCCESS</span></h2>
+                                    <p>
+                                        <br />
+                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillumdolo eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proi. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </p>
+                                    <p></p>
+                                    <ul class='support-points'>
+                                        <li><i class='fa fa-star-o '></i> Get Support From High Class Professionals</li>
+                                        <li><i class='fa fa-star-o '></i> 24/7 Supporting Team</li>
+                                        <li><i class='fa fa-star-o '></i> Best In Class Communication</li>
+                                        <li><i class='fa fa-star-o '></i> Advanced Troubleshooting</li>
+                                    </ul>
+                                    <div class='try-btn'>
+                                        <a href='#' class='tr-btn'>VIEW MORE</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vc_row wpb_row vc_row-fluid">
+                <div class="vc_col-sm-12 wpb_column vc_column_container">
+                    <div class="wpb_wrapper">
+                        <section class='work work-s'>
+                            <div class='container'>
+                                <div class='col-md-12 tag-heading'>
+                                    <h2>MY TEAM</h2>
+                                    <p></p>
+                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillumdolo eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce scelerisque nibh et neque faucibus suscipit. Sed auctor ipsum ut tellus faucibus tincidunt.</p>
+                                    <p></p>
+                                </div>
+                            </div>
+                            
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="vc_row wpb_row vc_row-fluid">
+                <div class="vc_col-sm-12 wpb_column vc_column_container">
+                    <div class="wpb_wrapper">
+                        <div id='dg-container' class='dg-container' style='background-image:url(wp-content/plugins/orane_core/images/wood2.jpg);'>
+                            <div class='container'>
+                                <div class='col-md-12'>
+                                    <div class='dg-wrapper'>
+                                        <a href='#'>
+                                            <img class='dg-img shadow-1' src='images/mr_tu_tran.PNG' style="width:250px; height:254px;" alt='John Doe'>
+                                            <div class='qt'>
+                                                <span data-url='' title='' class='name'>Mr Tu Tran</span>
+                                                <br />
+                                                <p>Keep up the outstanding, success will pursue you</p>
+                                                <br />
+                                                <span class='testi-position'>Team leader</span> - <span class='testi-company'>Zokavn</span><br />
+                                                <i data-url='http://www.facebook.com' class='fa fa-facebook fa-lg'></i>
+                                                <i data-url='skype:asdf?call' class='fa fa-skype fa-lg'></i>
+                                                <i data-url='http://www.twitter.com' class='fa fa-twitter fa-lg'></i>
+                                            </div>
+                                        </a><a href='#'>
+                                            <img class='dg-img shadow-1' src='wp-content/uploads/2014/10/5.png' alt='Jane Schimdt'>
+                                            <div class='qt'>
+                                                <span data-url='' title='' class='name'>Mr Phuc Bui</span>
+                                                <br />
+                                                <p>Keep up the outstanding, success will pursue you</p>
+                                                <br />
+                                                <span class='testi-position'>Business analyst</span> - <span class='testi-company'>Zokavn</span><br />
+                                                <i data-url='http://www.facebook.com' class='fa fa-facebook fa-lg'></i><i data-url='skype:asdf?call' class='fa fa-skype fa-lg'></i><i data-url='http://www.twitter.com' class='fa fa-twitter fa-lg'></i>
+                                            </div>
+                                        </a><a href='#'>
+                                            <img class='dg-img shadow-1' src='wp-content/uploads/2014/10/6.png' alt='John Smith'>
+                                            <div class='qt'>
+                                                <span data-url='' title='' class='name'>Mr Hien Tran</span>
+                                                <br />
+                                                <p>Keep up the outstanding, success will pursue you</p>
+                                                <br />
+                                                <span class='testi-position'>Technical support</span> - <span class='testi-company'>Zokavn</span><br />
+                                                <i data-url='http://www.facebook.com' class='fa fa-facebook fa-lg'></i><i data-url='skype:asdf?call' class='fa fa-skype fa-lg'></i><i data-url='http://www.twitter.com' class='fa fa-twitter fa-lg'></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <nav>
+                                        <span class='dg-prev'>&lt;</span>
+                                        <span class='dg-next'>&gt;</span>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          
+
+        </div>
+
+        <div class="clearfix"></div>
+
+        <footer>
+            <div class="container">
+                <div class='col-md-4 blg'>
+                    <h2>NEW POSTS</h2><ul class='foot-post'>
+                        <li class='small-img'>
+                            <a href='index83bc.html?post_type=post&amp;p=671'>
+                            <img width="70" height="70" src="wp-content/uploads/2014/11/photodune-5148297-happy-business-team-s-70x70.jpg" 
+                                 class="attachment-small-thumb size-small-thumb wp-post-image" alt="Happy business team" 
+                                 srcset="http://telecomsians.com/themes/orane_demo/wp-content/uploads/2014/11/photodune-5148297-happy-business-team-s-150x150.jpg 150w, http://telecomsians.com/themes/orane_demo/wp-content/uploads/2014/11/photodune-5148297-happy-business-team-s-70x70.jpg 70w" sizes="(max-width: 70px) 100vw, 70px" /></a>
+                        </li>
+                        <li class='date'>
+                            <div class='day'>
+                                06
+                            </div>
+                            <div class='month'>
+                                Feb
+                            </div>
+                        </li>
+                        <li class='post-title'>
+                            <a href='index83bc.html?post_type=post&amp;p=671' class='title'>Team work</a>
+                            <p class='author'> -by Admin</p>
+                        </li>
+                    </ul><ul class='foot-post'>
+                        <li class='small-img'>
+                            <a href='indexbfff.html?post_type=post&amp;p=250'>
+                            <img width="70" height="70" src="wp-content/uploads/2015/02/2-70x70.jpg" 
+                                 class="attachment-small-thumb size-small-thumb wp-post-image" alt="2" 
+                                 srcset="http://telecomsians.com/themes/orane_demo/wp-content/uploads/2015/02/2-150x150.jpg 150w, http://telecomsians.com/themes/orane_demo/wp-content/uploads/2015/02/2-70x70.jpg 70w" sizes="(max-width: 70px) 100vw, 70px" /></a>
+                        </li>
+
+                        <li class='date'>
+                            <div class='day'>
+                                15
+                            </div>
+                            <div class='month'>
+                                Nov
+                            </div>
+                        </li>
+                        <li class='post-title'>
+                            <a href='indexbfff.html?post_type=post&amp;p=250' class='title'>Web design</a>
+                            <p class='author'> -by Admin</p>
+                        </li>
+                    </ul><ul class='foot-post'>
+                        <li class='small-img'>
+                            <a href='indexfe8a.html?post_type=post&amp;p=242'>
+                            <img width="70" height="70" src="wp-content/uploads/2014/11/photodune-446761-business-presentation-m-e1425477744755-70x70.jpg" 
+                                 class="attachment-small-thumb size-small-thumb wp-post-image" alt="Business presentation" 
+                                 srcset="http://telecomsians.com/themes/orane_demo/wp-content/uploads/2014/11/photodune-446761-business-presentation-m-e1425477744755-150x150.jpg 150w, http://telecomsians.com/themes/orane_demo/wp-content/uploads/2014/11/photodune-446761-business-presentation-m-e1425477744755-70x70.jpg 70w" sizes="(max-width: 70px) 100vw, 70px" /></a>
+                        </li>
+
+                        <li class='date'>
+                            <div class='day'>
+                                27
+                            </div>
+                            <div class='month'>
+                                Feb
+                            </div>
+                        </li>
+                        <li class='post-title'>
+                            <a href='indexfe8a.html?post_type=post&amp;p=242' class='title'>Web application manager</a>
+                            <p class='author'> -by Admin</p>
+                        </li>
+                    </ul>
+                </div>
+               
+                <div class='col-md-4 side-gap'>
+                    <h2>CONTACT INFO</h2>
+                    <img src='wp-content/themes/Orane/images/footer-map.png' alt='' />
+                    <ul class='address'>
+                        <li><i class='fa fa-home '></i>  <span>Admin: Mr Tran Thanh Tu</span></li>
+                        <li><i class='fa fa-phone '></i>  <span>Phone: 0976.727.688</span></li>
+                        <li><i class='fa fa-send '></i>   <span>Mail: admin@zokavn.com</span></li>
+                    </ul>
+                </div>
+                <div class='col-md-4'>
+                    <h2>About us</h2>
+                    <p>
+                        Zokavn software is the leading software company at during 3 years in the region.
+                        Teaming up with the young, dynamic staff and strong knowledge, Zokavn software always get clients’ 
+                        quality and satisfaction for our company orientation.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <div class="bottom-bar">
+            <div class="container">
+                <div class="col-md-12">
+                    <div class='left'>Design and develop by Zokavn</div>
+                    <div class='right'>Copyrights © 2016</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <style>
+        #header {
+            margin: 0 auto;
+        }
+        @media (max-width: 991px) {
+            .navbar-header {
+                float: none;
+            }
+
+            .navbar-toggle {
+                display: block;
+            }
+
+            .navbar-collapse {
+                border-top: 1px solid transparent;
+                box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+            }
+
+                .navbar-collapse.collapse {
+                    display: none !important;
+                }
+
+            .navbar-nav {
+                float: none !important;
+                margin: 7.5px -15px;
+            }
+
+                .navbar-nav&gt;li {
+                    float: none;
+                }
+
+                    .navbar-nav&gt;li&gt;a {
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                    }
+
+            .navbar-text {
+                float: none;
+                margin: 15px 0;
+            }
+            /* since 3.1.0 */
+            .navbar-collapse.collapse.in {
+                display: block !important;
+            }
+
+            .collapsing {
+                overflow: hidden !important;
+            }
+        }
+    </style>
+
+
+    <!-- stylesheet, only for demo, should be commennted in the distribution version -->
+    <link rel="stylesheet" id="css_switcher" href="#">
+    <link rel="stylesheet" id="css_switcher2" href="#">
+    <!--/ ends stylesheet demo -->
+
+    <script type='text/javascript' src='wp-content/plugins/bbpress/templates/default/js/editor7ede.js?ver=e75a8f82c6fd785a4c26890c50e42c65-5815'></script>
+    <script type='text/javascript' src='wp-content/plugins/contact-form-7/includes/js/jquery.form.minaf93.js?ver=e75a8f82c6fd785a4c26890c50e42c65-2014.06.20'></script>
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var _wpcf7 = { "loaderUrl": "http:\/\/telecomsians.com\/themes\/orane_demo\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif", "recaptchaEmpty": "Please verify that you are not a robot.", "sending": "Sending ...", "cached": "1" };
+        /* ]]> */
+    </script>
+
+    <script type='text/javascript' src='wp-content/plugins/contact-form-7/includes/js/scripts9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-includes/js/jquery/ui/core.min9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-includes/js/jquery/ui/datepicker.min9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-content/plugins/contact-form-7-datepicker/js/jquery-ui-timepicker/jquery-ui-timepicker-addon.min9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-includes/js/jquery/ui/widget.min9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-includes/js/jquery/ui/mouse.min9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-includes/js/jquery/ui/slider.min9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-includes/js/jquery/ui/button.min9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-content/plugins/contact-form-7-datepicker/js/jquery-ui-sliderAccess9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var wc_add_to_cart_params = { "ajax_url": "\/themes\/orane_demo\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/themes\/orane_demo\/?wc-ajax=%%endpoint%%", "i18n_view_cart": "View Cart", "cart_url": "", "is_cart": "", "cart_redirect_after_add": "no" };
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var woocommerce_params = { "ajax_url": "\/themes\/orane_demo\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/themes\/orane_demo\/?wc-ajax=%%endpoint%%" };
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-content/plugins/woocommerce/assets/js/jquery-cookie/jquery.cookie.min9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var wc_cart_fragments_params = { "ajax_url": "\/themes\/orane_demo\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/themes\/orane_demo\/?wc-ajax=%%endpoint%%", "fragment_name": "wc_fragments" };
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-content/themes/Orane/js/bootstrap.min9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-content/themes/Orane/js/jquery.sticky9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-content/themes/Orane/js/wow.min9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-content/themes/Orane/js/easing9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-content/themes/Orane/js/jquery.ui.totop9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-content/themes/Orane/js/SmoothScroll9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-content/themes/Orane/js/modernizr-latest9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-content/themes/Orane/js/classie9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-content/themes/Orane/js/uisearch9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-content/themes/Orane/js/preloaders9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-content/themes/Orane/js/switcher9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var orane_var = { "color": "#D86838" };
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='wp-content/themes/Orane/js/custom9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-includes/js/wp-embed.min9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-content/plugins/js_composer/assets/js/js_composer_front9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-content/plugins/orane_core/assets/waypoints.min9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-content/plugins/orane_core/assets/jquery.easypiechart.min9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-content/plugins/orane_core/assets/isotope.pkgd.min9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-content/plugins/orane_core/assets/jquery.debouncedresize9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-content/plugins/orane_core/assets/jquery.magnific-popup9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript' src='wp-content/plugins/orane_core/assets/jquery.3dgallery9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var mc4wp_forms_config = [];
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='wp-content/plugins/mailchimp-for-wp/assets/js/forms-api.min9cc3.js?ver=e75a8f82c6fd785a4c26890c50e42c65'></script>
+    <script type="text/javascript">
+        (function () {
+            function addEventListener(element, event, handler) {
+                if (element.addEventListener) {
+                    element.addEventListener(event, handler, false);
+                } else if (element.attachEvent) {
+                    element.attachEvent('on' + event, handler);
+                }
+            }
+        })();
+    </script>
+</body>
+</html>
